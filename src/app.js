@@ -8,7 +8,8 @@ const app = express();
 //configure the cors
 app.use(cors({
     credentials: true,
-    origin: process.env.CORS_ORIGIN 
+    origin: process.env.CORS_ORIGIN ,
+    methods: "GET,POST,PUT,DELETE",
 }))
 
 //configure cookie parser
