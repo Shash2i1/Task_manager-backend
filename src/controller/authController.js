@@ -4,8 +4,11 @@ import {ApiResponse} from "../utils/ApiResponse.js"
 import {ApiError} from "../utils/ApiError.js"
 
 const option = {
-    httpOnly: true,
-    secure: true
+    httpOnly: true, // Prevents access from JavaScript
+    secure: true,   // Ensures cookies are sent only over HTTPS (Render is HTTPS)
+    sameSite: "None", // Required for cross-origin requests
+    domain: ".onrender.com", // Makes cookies accessible to subdomains
+    path: "/",
 }
 
 
