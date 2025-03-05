@@ -4,12 +4,15 @@ import cookieParser from "cookie-parser"
 import { ApiError } from "./utils/ApiError.js";
 
 const app = express();
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://task-manager-frontend-m4n0.onrender.com"
+  ];
 
 //configure the cors
 app.use(cors({
     credentials: true,
-    origin: process.env.CORS_ORIGIN ,
-    methods: "GET,POST,PUT,DELETE",
+    origin: allowedOrigins ,
 }))
 
 //configure cookie parser
